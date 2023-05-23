@@ -3,7 +3,12 @@ public class Manager {
     private int limit;
 
     public Manager() {
+
         this.limit = 5;
+    }
+
+    public Manager(int limit) {
+        this.limit = limit;
     }
 
 
@@ -25,7 +30,7 @@ public class Manager {
     public String[] findLast() {
         int resultLength;
         if (films.length < limit) {
-           resultLength = films.length;
+            resultLength = films.length;
         } else {
             resultLength = limit;
         }

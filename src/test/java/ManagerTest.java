@@ -19,6 +19,26 @@ public class ManagerTest {
         Assertions.assertArrayEquals(expected,actual);
     }
     @Test
+    public void shouldFindThreeMovies() {
+
+        manager.add("Movie I");
+        manager.add("Movie II");
+        manager.add("Movie III");
+
+        String[] actual = manager.findAll();
+        String[] expected = {"Movie I", "Movie II", "Movie III"};
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void findOneMovie() {
+
+        manager.add("Movie I");
+
+        String[] actual = manager.findAll();
+        String[] expected = {"Movie I"};
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
     public void shouldShowLastMovies(){
         manager.add("Бладшот");
         manager.add("Вперед");
@@ -41,5 +61,21 @@ public class ManagerTest {
         Assertions.assertArrayEquals(expected,actual);
 
     }
+
+    @Test
+    public void findLastFiveMovies() {
+
+        manager.add("Movie I");
+        manager.add("Movie II");
+        manager.add("Movie III");
+        manager.add("Movie IV");
+        manager.add("Movie V");
+
+        String[] actual = manager.findLast();
+        String[] expected = {"Movie V","Movie IV","Movie III", "Movie II", "Movie I"};
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+
 
 }
